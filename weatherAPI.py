@@ -1,5 +1,6 @@
 import requests
 
+# get
 apiKey = "36bab58ca3e8543ac064974051023e67"
 cityName = "Chicago"
 countryCode = "US"
