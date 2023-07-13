@@ -11,9 +11,6 @@ class WeatherApp:
         self.location.set_latitude(latitude)
         self.location.set_longitude(longitude)
 
-    def set_api_key(self, api_key):
-        self.weather_service.set_api_key(api_key)
-
     def get_current_weather(self):
         return self.weather_service.get_weather()
 
