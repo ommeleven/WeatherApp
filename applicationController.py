@@ -14,3 +14,4 @@ class ApplicationController:
         self.user_interface.handle_user_input("initialize")
 
     # Other methods from the previous code
+    # Hello :)
