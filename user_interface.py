@@ -5,8 +5,10 @@ class UserInterface:
 
     def display_clothing_recommendations(self, recommendations):
         # Display clothing recommendations in the UI
-        pass
+        for item in recommendations:
+            print(f"- {item}")
 
     def handle_user_input(self, input_data):
         # Handle user input and trigger appropriate actions
-        pass
+        if input_data == "initialize":
+            
