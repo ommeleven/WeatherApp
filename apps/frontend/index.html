@@ -27,6 +27,31 @@
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // API call
+
+      let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
+      let cityName = "Chicago";
+      let countryCode = "US";
+      let apiKey = "b9f91d369ff59547cd47b931d8cbc56e";
+      let file = queryUrl + cityName + "," + countryCode + "&appid=" + apiKey;
+
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?q=Chicago,US&appid=5f0a2784fd6e5677b3acf53cb1a46274&units=imperial"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          let main = data.weather[0].main;
+          let description = data.weather[0].description;
+          let temp = Math.round(data.main.temp);
+          let pressure = data.main.pressure;
+          let humidity = data.main.humidity;
+
+          // weatehr hourly data
+          let hourNow = data//console.log(main);
+          .console
+            .log(temp);
+        });
+    </script>
   </body>
 </html>
