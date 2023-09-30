@@ -29,28 +29,29 @@
     <!-- Custom scripts -->
     <script type="text/javascript">
       // API call
-
-      let queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
-      let cityName = "Chicago";
-      let countryCode = "US";
-      let apiKey = "b9f91d369ff59547cd47b931d8cbc56e";
+      // https://api.openweathermap.org/data/3.0/onecall?lat=41.8781&lon=-87.623177&exclude=minutely,alerts&appid=b9f91d369ff59547cd47b931d8cbc56e
+      let queryUrl = "https://api.openweathermap.org/data/3.0/onecall?";
+      let lat = "lat=41.8781";
+      let lon = "&lon=-87.623177";
+      let apiOptions = "&exclude=minutely,alerts";
+      let apiKey = "&appid=8af0f8790bd0bba6cf0dbaa13c3075e9";
       let file = queryUrl + cityName + "," + countryCode + "&appid=" + apiKey;
 
       fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=Chicago,US&appid=5f0a2784fd6e5677b3acf53cb1a46274&units=imperial"
+        "https://api.openweathermap.org/data/3.0/onecall?lat=41.8781&lon=-87.623177&exclude=minutely,alerts&appid=8af0f8790bd0bba6cf0dbaa13c3075e9"
       )
         .then((response) => response.json())
         .then((data) => {
-          let main = data.weather[0].main;
-          let description = data.weather[0].description;
-          let temp = Math.round(data.main.temp);
-          let pressure = data.main.pressure;
-          let humidity = data.main.humidity;
+          let main = data.current.weather[0].main;
+          console.log(main);
+          //let description = data.weather[0].description;
+          //let temp = Math.round(data.main.temp);
+          //let pressure = data.main.pressure;
+          //let humidity = data.main.humidity;
 
           // weatehr hourly data
-          let hourNow = data//console.log(main);
-          .console
-            .log(temp);
+          //let hourNow = data.console //console.log(main);
+          //.log(temp);
         });
     </script>
   </body>
