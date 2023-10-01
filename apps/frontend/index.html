@@ -27,7 +27,7 @@
     <div class="container my-5">
       <div class="row d-flex justify-content-center">
         <div class="col-md-7">
-          <div class="card shoadow-1-string">
+          <div id="wrapper-bg" class="card shoadow-1-strong" style="background-image: url('');">
             <!-- Main current data -->
             <div class="card-header text-center border-0">
               <p class="h2 mb-1" id="wrapper-name"></p>
@@ -46,81 +46,78 @@
                   <strong class="d-block" id="wrapper-hour-now"></strong>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2  text-center">
                   <strong id="wrapper-time1" class="d-block mb-2"></strong>
                   <img id="wrapper-icon-hour1" src="" alt="" />
                   <strong class="d-block" id="wrapper-hour1"></strong>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2  text-center">
                   <strong id="wrapper-time2" class="d-block mb-2"></strong>
                   <img id="wrapper-icon-hour2" src="" alt="" />
                   <strong class="d-block" id="wrapper-hour2"></strong>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2  text-center">
                   <strong id="wrapper-time3" class="d-block mb-2"></strong>
                   <img id="wrapper-icon-hour3" src="" alt="" />
                   <strong class="d-block" id="wrapper-hour3"></strong>
                 </div>
-                <div class="col-2">
+                <div class="col-2  text-center">
                   <strong id="wrapper-time4" class="d-block mb-2"></strong>
                   <img id="wrapper-icon-hour4" src="" alt="" />
                   <strong class="d-block" id="wrapper-hour4"></strong>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2  text-center">
                   <strong id="wrapper-time5" class="d-block mb-2"></strong>
                   <img id="wrapper-icon-hour5" src="" alt="" />
                   <strong class="d-block" id="wrapper-hour5"></strong>
                 </div>
               </div>
             </div>
-            <!-- Daily Forecast -->
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <div class="col-md-6">
-                    <strong>Today</strong>
-                  </div>
-                  <div class="col-md-2">
-                    <img id="wrapper-icon-today" src="" alt="" />
-                  </div>
-                  <div class="col-md-4">
-                    <span id="wrapper-forecast-temp-today"></span>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="col-md-6">
-                        <strong>Tomorrow</strong>
-                      </div>
-                      <div class="col-md-2">
-                        <img id="wrapper-icon-tomorrow" src="" alt="">
-                      </div>
-                      <div class="col-md-4">
-                        <span id="wrapper-forecast-temp-tomorrow"></span>
-                </div>
-                          <div class="row">
-                            <div class="col">
-                              <div class="col-md-6">
-                                <strong>Day After Tomorrow</strong>
-                              </div>
-                              <div class="col-md-2">
-                                <img id="wrapper-icon-dAT" src="" alt="">
-                              </div>
-                              <div class="col-md-4">
-                                <span id="wrapper-forecast-temp-dAT"></span>
-                              </div>
-                              
-
-                        
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+           <!-- Daily Forecast -->
+<div class="card-body">
+  <div class="row">
+    <!-- Today -->
+    <div class="col-md-6">
+      <strong>Today</strong>
     </div>
+    <div class="col-md-2 text-right">
+      <img id="wrapper-icon-today" src="" alt="" />
+    </div>
+    <div class="col-md-4 text-right">
+      <span id="wrapper-forecast-temp-today"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Tomorrow -->
+    <div class="col-md-6">
+      <strong>Tomorrow</strong>
+    </div>
+    <div class="col-md-2 text-right">
+      <img id="wrapper-icon-tomorrow" src="" alt="">
+    </div>
+    <div class="col-md-4 text-right">
+      <span id="wrapper-forecast-temp-tomorrow"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Day After Tomorrow -->
+    <div class="col-md-6">
+      <strong>Day After Tomorrow</strong>
+    </div>
+    <div class="col-md-2 text-right">
+      <img id="wrapper-icon-dAT" src="" alt="">
+    </div>
+    <div class="col-md-4 text-right">
+      <span id="wrapper-forecast-temp-dAT"></span>
+    </div>
+  </div>
+</div>
+
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
@@ -195,7 +192,7 @@
           document.getElementById("wrapper-forecast-temp-dAT").innerHTML = day2Temp + "°F";
           
 
-          // Icons
+          // Icons Daily
           let iconBaseUrl = "https://openweathermap.org/img/wn/";
           let iconFormat = ".png";
 
@@ -214,25 +211,25 @@
           let iconFullUrldAT = iconBaseUrl + iconCodedAT + iconFormat;
           document.getElementById("wrapper-icon-dAT").src = iconFullUrldAT;
 
+           
+
           // Icons hourly
-
-
-
+          
           // Hour Now
 
-          let iconCodeHourNow = data.current.weather[0].icon;
+          let iconCodeHourNow = data.hourly[0].weather[0].icon;
           let iconFullUrlHourNow = iconBaseUrl + iconCodeHourNow + iconFormat;
           document.getElementById("wrapper-icon-hour-now").src = iconFullUrlHourNow;
 
           // Hour Now
 
-          let iconCodeHour1 = data.current.weather[0].icon;
+          let iconCodeHour1 = data.hourly[1].weather[0].icon;
           let iconFullUrlHour1 = iconBaseUrl + iconCodeHour1 + iconFormat;
           document.getElementById("wrapper-icon-hour1").src = iconFullUrlHour1;
           
           // Hour Now
 
-          let iconCodeHour2 = data.current.weather[0].icon;
+          let iconCodeHour2 = data.hourly[2].weather[0].icon;
           let iconFullUrlHour2 = iconBaseUrl + iconCodeHour2 + iconFormat;
           document.getElementById("wrapper-icon-hour2").src = iconFullUrlHour2;
 
