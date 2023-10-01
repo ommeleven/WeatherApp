@@ -38,7 +38,9 @@
               <span>Humidity: <span id="wrapper-humidity"></span></span>
             </div>
             <!-- Hourly Forecast  -->
-            <div class="card-body">
+            <div
+              class="card-body border-top border-bottom justify-content-center"
+            >
               <div class="row gx-lg-5">
                 <div class="col-2">
                   <strong class="d-block mb-2">Now</strong>
@@ -53,26 +55,26 @@
                 </div>
 
                 <div class="col-2">
-                  <strong id="wrapper-time1" class="d-block mb-2"></strong>
-                  <img id="wrapper-icon-hour1" src="" alt="" />
-                  <strong class="d-block"></strong>
+                  <strong id="wrapper-time2" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour2" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour2"></strong>
                 </div>
 
                 <div class="col-2">
-                  <strong class="d-block mb-2"></strong>
-                  <img id="wrapper-icon-hour-now" src="" alt="" />
-                  <strong class="d-block"></strong>
+                  <strong id="wrapper-time3" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour3" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour3"></strong>
                 </div>
                 <div class="col-2">
-                  <strong class="d-block mb-2"></strong>
-                  <img id="wrapper-icon-hour-now" src="" alt="" />
-                  <strong class="d-block"></strong>
+                  <strong id="wrapper-time4" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour4" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour4"></strong>
                 </div>
 
                 <div class="col-2">
-                  <strong class="d-block mb-2"></strong>
-                  <img id="wrapper-icon-hour-now" src="" alt="" />
-                  <strong class="d-block"></strong>
+                  <strong id="wrapper-time5" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour5" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour5"></strong>
                 </div>
               </div>
             </div>
@@ -121,6 +123,29 @@
           let hour4 = data.hourly[4].temp;
           let hour5 = data.hourly[5].temp;
 
+          document.getElementById("wrapper-hour-now").innerHTML =
+            hourNow + "°F";
+
+          document.getElementById("wrapper-hour1").innerHTML = hour1 + "°F";
+
+          document.getElementById("wrapper-hour2").innerHTML = hour2 + "°F";
+          document.getElementById("wrapper-hour3").innerHTML = hour3 + "°F";
+          document.getElementById("wrapper-hour4").innerHTML = hour4 + "°F";
+          document.getElementById("wrapper-hour5").innerHTML = hour5 + "°F";
+
+          // Time
+          let TimeNow = new Date().getHours();
+          let time1 = TimeNow + 1;
+          let time2 = time1 + 1;
+          let time3 = time2 + 1;
+          let time4 = time3 + 1;
+          let time5 = time4 + 1;
+
+          document.getElementById("wrapper-time1").innerHTML = time1;
+          document.getElementById("wrapper-time2").innerHTML = time2;
+          document.getElementById("wrapper-time3").innerHTML = time3;
+          document.getElementById("wrapper-time4").innerHTML = time4;
+          document.getElementById("wrapper-time5").innerHTML = time5;
           // Weather daily data
           let tmrTemp = Math.round(data.daily[0].temp.day);
           let tmrMain = data.daily[0].weather[0].main;
