@@ -43,16 +43,37 @@
                 <div class="col-2">
                   <strong class="d-block mb-2">Now</strong>
                   <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour-now"></strong>
+                </div>
+
+                <div class="col-2">
+                  <strong id="wrapper-time1" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block" id="wrapper-hour1"></strong>
+                </div>
+
+                <div class="col-2">
+                  <strong id="wrapper-time1" class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour1" src="" alt="" />
                   <strong class="d-block"></strong>
                 </div>
 
-                <div class="col-2"></div>
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <strong class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block"></strong>
+                </div>
+                <div class="col-2">
+                  <strong class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block"></strong>
+                </div>
 
-                <div class="col-2"></div>
-                <div class="col-2"></div>
-
-                <div class="col-2"></div>
+                <div class="col-2">
+                  <strong class="d-block mb-2"></strong>
+                  <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block"></strong>
+                </div>
               </div>
             </div>
             <!-- Daily Forecast -->
@@ -91,6 +112,7 @@
           document.getElementById("wrapper-pressure").innerHTML = pressure;
           document.getElementById("wrapper-humidity").innerHTML = humidity;
           document.getElementById("wrapper-name").innerHTML = name;
+
           // weather hourly data
           let hourNow = data.hourly[0].temp;
           let hour1 = data.hourly[1].temp;
