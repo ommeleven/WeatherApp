@@ -26,7 +26,39 @@
   <body>
     <div class="container my-5">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-5">.smdbcard</div>
+        <div class="col-md-7">
+          <div class="card shoadow-1-string">
+            <!-- Main current data -->
+            <div class="card-header text-center border-0">
+              <p class="h2 mb-1" id="wrapper-name"></p>
+              <p class="mb-1" id="wrapper-description"></p>
+              <p class="display-1 mb-1" id="wrapper-temp"></p>
+              <span>Pressure: <span id="wrapper-pressure"></span></span>
+              <span class="mx-2">|</span>
+              <span>Humidity: <span id="wrapper-humidity"></span></span>
+            </div>
+            <!-- Hourly Forecast  -->
+            <div class="card-body">
+              <div class="row gx-lg-5">
+                <div class="col-2">
+                  <strong class="d-block mb-2">Now</strong>
+                  <img id="wrapper-icon-hour-now" src="" alt="" />
+                  <strong class="d-block"></strong>
+                </div>
+
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+
+                <div class="col-2"></div>
+                <div class="col-2"></div>
+
+                <div class="col-2"></div>
+              </div>
+            </div>
+            <!-- Daily Forecast -->
+            <div class="card-body"></div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- MDB -->
@@ -51,7 +83,14 @@
           let temp = Math.round(data.current.temp);
           let pressure = data.current.pressure;
           let humidity = data.current.humidity;
+          let name = "Chicago"; // get it dynamically later
 
+          document.getElementById("wrapper-description").innerHTML =
+            description;
+          document.getElementById("wrapper-temp").innerHTML = temp + "°F";
+          document.getElementById("wrapper-pressure").innerHTML = pressure;
+          document.getElementById("wrapper-humidity").innerHTML = humidity;
+          document.getElementById("wrapper-name").innerHTML = name;
           // weather hourly data
           let hourNow = data.hourly[0].temp;
           let hour1 = data.hourly[1].temp;
