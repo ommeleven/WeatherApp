@@ -251,6 +251,36 @@
           let iconFullUrlHour5 = iconBaseUrl + iconCodeHour5 + iconFormat;
           document.getElementById("wrapper-icon-hour5").src = iconFullUrlHour5;
 
+
+          // Backgrounds
+
+        switch(main) {
+          case "Snow":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/snow.gif')";
+            break;
+          case "Rain":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/rain.gif')";
+            break;
+          case "Clouds":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/clouds.gif')";
+            break;
+          case "Clear":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/clear.gif')";
+            break;
+          case "Thunderstorm":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/thunderstorm.gif')";
+            break;
+          case "Fog":
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/fog.gif')";
+            break;
+          default:  
+            document.getElementById("wrapper-bg").style.backgroundImage = "url('img/clear.gif')";
+            break;
+            
+
+        }
+
+
         });
     </script>
   </body>
