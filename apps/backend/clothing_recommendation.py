@@ -4,7 +4,7 @@ import numpy as np
 
 
 class ClothingRecommendation:
-    app = Flask(__name)
+    app = Flask(__name__)
 
     # Load the trained neural network model
     model = tf.keras.models.load_model("clothing_recommendation_model.h5")
