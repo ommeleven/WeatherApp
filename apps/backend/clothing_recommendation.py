@@ -56,3 +56,7 @@ class ClothingRecommendation:
 
     if __name__ == "__main":
         app.run(debug=True)
+
+
+cr = ClothingRecommendation()
+print(cr.recommend_clothing())
